@@ -84,3 +84,5 @@ public class MainActivity extends AppCompatActivity implements CameraBridgeViewB
 ```
 
 ### Меняем минимальную версию SDK в app.gradle на 21
+![Gradle Scripts](/screenshots/s5.png)
+Из файла *opencv.gradle* скопировать строчку **minSdkVersion XX** и заменить ее в файле *app.gradle*.
