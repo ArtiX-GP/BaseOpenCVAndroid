@@ -1,20 +1,19 @@
 # BaseOpenCVAndroid
 
 ## Подключение библиотеки
-### 1. Скачать SDK с оф. сайта https://opencv.org/releases/
-### 2. Распаковать SDK на диск.
-### 3. В новом проекте Android Studio выбрать *File* -> *Import Module...*. В новом окне вписать путь до папки *sdk* библиотеки OpenCV.
-### 4. Добавить новую зависимость (Dependencies) в проект *app*. Открыть *File* -> *Project Structure* -> *Dependencies* -> *Add Dependency* -> *Module Dependency* и выбрать добавленный модуль OpenCV.
+1. Скачать SDK с оф. сайта https://opencv.org/releases/
+![OpenCV Site](/screenshots/s1.png)
+2. Распаковать SDK на диск.
+3. В новом проекте Android Studio выбрать *File* -> *Import Module...*. В новом окне вписать путь до папки *sdk* библиотеки OpenCV.
+![Import Module](/screenshots/s2.png)
+4. Добавить новую зависимость (Dependencies) в проект *app*. Открыть *File* -> *Project Structure* -> *Dependencies* -> *Add Dependency* -> *Module Dependency* и выбрать добавленный модуль OpenCV.
+![Add dependency](/screenshots/s4.png)
+5. Перенести библиотеки с расширением **.so** (.a переносить не нужно!) из распакованного архива OpenCV (*Open CV* -> *sdk* -> *native* -> *libs*) в папку *jniLibs* проекта (*app* -> *src* -> *main* -> *jniLibs*). Должна получиться следующая структура:
+![Move libs](/screenshots/s3.png)
 
 ## Создание Activity, которая будет отображать картинку с камеры
 ### Вносим изменения в файл AndroidManifest.xml
 ```
-<supports-screens android:resizeable="true"
-    android:smallScreens="true"
-    android:normalScreens="true"
-    android:largeScreens="true"
-    android:anyDensity="true" />
-
 <uses-permission android:name="android.permission.CAMERA"/>
 
 <uses-feature android:name="android.hardware.camera" android:required="false"/>
